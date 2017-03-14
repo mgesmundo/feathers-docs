@@ -282,11 +282,11 @@ Any registered service will automatically turn into an event emitter that emits 
 There are some times where you may want to use a service method inside your application or allow other servers in your cluster access to a method, but you don't want to expose a service method publicly. We've created [a bundled hook](../hooks/bundled-deprecated.html#disable) that makes this really easy.
 
 ```js
-const hooks = require('feathers-hooks');
+const hooks = require('feathers-hooks-common');
 
 app.service('users').before({
   // Users can not be created by external access
-  create: hooks.disable('external'),
+  create: hooks.disallow('external'),
 });
 ```
 
